@@ -117,12 +117,8 @@ img, svg { max-width: 100%; }
   font: 10px Verdana, sans-serif;
   letter-spacing: 5px;
   color: var(--muted);
-  display: inline-block;
-  padding: 4px 10px;
   margin: 0 0 8px;
-  border: 1px solid #344032;
-  background: #1a211b80;
-  text-shadow: 1px 0 #6f7f69;
+  text-shadow: 1px 1px #51604c;
   transform: translateY(-55%);
 }
 
@@ -360,7 +356,7 @@ h1 .word-black {
 @media (max-width: 620px) {
   .shell { margin: 10px auto 35px; }
   .hero { padding: 44px 12px 37px; }
-  .eyebrow { letter-spacing: 3px; padding: 3px 7px; }
+  .eyebrow { letter-spacing: 3px; }
   .hero-media {
     --shot-gap: 71px;
     --shot-up: 16px;
