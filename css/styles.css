@@ -115,22 +115,25 @@ img, svg { max-width: 100%; }
 
 .eyebrow { font-size: 11px; letter-spacing: 3px; color: var(--muted); }
 
-.hero-strip {
-  --shot-offset-x: 310px;
-  --shot-rise: 15%;
-  width: min(980px, 100%);
+.hero-media {
+  --shot-gap: 94px;
+  --shot-up: 28px;
+  width: min(720px, 100%);
   margin: 24px auto 12px;
   position: relative;
-  display: flex;
-  min-height: 176px;
-  align-items: center;
-  justify-content: center;
+  min-height: 182px;
+}
+
+.ghost-anchor {
+  position: absolute;
+  left: 50%;
+  top: 57%;
+  transform: translate(-50%, -50%);
 }
 
 .hero-mini-shot {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  top: 0;
   width: 176px;
   border: 3px solid #4d584a;
   background: #aab9a0;
@@ -139,11 +142,13 @@ img, svg { max-width: 100%; }
 }
 
 .hero-mini-shot-left {
-  transform: translate(calc(-100% - var(--shot-offset-x)), calc(-50% - var(--shot-rise)));
+  left: calc(50% - var(--shot-gap));
+  transform: translate(-100%, calc(-1 * var(--shot-up)));
 }
 
 .hero-mini-shot-right {
-  transform: translate(var(--shot-offset-x), calc(-50% - var(--shot-rise)));
+  left: calc(50% + var(--shot-gap));
+  transform: translate(0, calc(-1 * var(--shot-up)));
 }
 
 .hero-mini-shot img {
@@ -344,11 +349,11 @@ h1 .word-black {
 @media (max-width: 620px) {
   .shell { margin: 10px auto 35px; }
   .hero { padding: 44px 12px 37px; }
-  .hero-strip {
-    --shot-offset-x: 76px;
-    --shot-rise: 8%;
+  .hero-media {
+    --shot-gap: 62px;
+    --shot-up: 16px;
     margin-top: 16px;
-    min-height: 124px;
+    min-height: 136px;
   }
   .hero-mini-shot { width: 106px; border-width: 2px; }
   .ghost { width: 88px; }
@@ -370,10 +375,10 @@ h1 .word-black {
 @media (max-width: 380px) {
   .hero-mini-shot { display: none; }
   .hero-strip { width: auto; }
-  .hero-strip {
-    --shot-offset-x: 50px;
-    --shot-rise: 6%;
-    min-height: 108px;
+  .hero-media {
+    --shot-gap: 46px;
+    --shot-up: 12px;
+    min-height: 116px;
   }
   .hero-mini-shot { width: 90px; }
   .ghost { width: 80px; }
