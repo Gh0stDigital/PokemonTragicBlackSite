@@ -132,6 +132,9 @@ img, svg { max-width: 100%; }
   box-shadow: 0 0 0 1px #2d372c inset;
 }
 
+.hero-mini-shot-left { transform: translate(-8px, -6px); }
+.hero-mini-shot-right { transform: translate(8px, -6px); }
+
 .hero-mini-shot img {
   width: 100%;
   height: auto;
@@ -332,6 +335,8 @@ h1 .word-black {
   .hero { padding: 44px 12px 37px; }
   .hero-strip { margin-top: 16px; gap: 10px; }
   .hero-mini-shot { width: 106px; border-width: 2px; }
+  .hero-mini-shot-left { transform: translate(-4px, -4px); }
+  .hero-mini-shot-right { transform: translate(4px, -4px); }
   .ghost { width: 88px; }
   h1 { letter-spacing: 1px; }
   h1 .title-sub { letter-spacing: 3px; }
