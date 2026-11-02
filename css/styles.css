@@ -256,6 +256,7 @@ h1 .word-black {
 }
 
 .shot svg { width: 100%; height: 100%; image-rendering: pixelated; }
+.shot img { width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; display: block; }
 
 .shot-label { font-size: 11px; text-align: center; color: var(--muted); margin-top: 4px; }
 
