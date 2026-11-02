@@ -113,10 +113,15 @@ img, svg { max-width: 100%; }
   background: radial-gradient(ellipse at center, var(--header) 0%, transparent 65%);
 }
 
-.eyebrow { font-size: 11px; letter-spacing: 3px; color: var(--muted); }
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  transform: translateY(-15%);
+}
 
 .hero-media {
-  --shot-gap: 94px;
+  --shot-gap: 108px;
   --shot-up: 28px;
   width: min(720px, 100%);
   margin: 24px auto 12px;
@@ -350,7 +355,7 @@ h1 .word-black {
   .shell { margin: 10px auto 35px; }
   .hero { padding: 44px 12px 37px; }
   .hero-media {
-    --shot-gap: 62px;
+    --shot-gap: 71px;
     --shot-up: 16px;
     margin-top: 16px;
     min-height: 136px;
@@ -376,7 +381,7 @@ h1 .word-black {
   .hero-mini-shot { display: none; }
   .hero-strip { width: auto; }
   .hero-media {
-    --shot-gap: 46px;
+    --shot-gap: 53px;
     --shot-up: 12px;
     min-height: 116px;
   }
