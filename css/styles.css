@@ -114,10 +114,10 @@ img, svg { max-width: 100%; }
 }
 
 .eyebrow {
-  font-size: 11px;
-  letter-spacing: 3px;
+  font: 12px Verdana, sans-serif;
+  letter-spacing: 5px;
   color: var(--muted);
-  transform: translateY(-15%);
+  transform: translateY(-30%);
 }
 
 .hero-media {
