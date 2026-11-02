@@ -77,7 +77,7 @@ The widget uses a dark theme to match the site.
 
 - **Colors:** edit the `:root` theme tokens at the top of `css/styles.css` to
   recolor the whole site from one place.
-- **Hero ghost:** replace `assets/img/ghost.png` (a transparent PNG shown at the
+- **Hero ghost:** replace `assets/img/ghost.webp` (shown at the
   top of the home page).
 - **Screenshots:** replace the inline placeholder SVGs in the Screenshots section
   of `index.html` with real captures (drop images in `assets/img/`).
