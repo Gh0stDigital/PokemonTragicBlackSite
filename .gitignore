@@ -1,0 +1,13 @@
+# Original single-file prototype (superseded by the modular site; kept locally for reference)
+pokemon_black_sample.html
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.idea/
+.vscode/
+
+# Temp render artifacts
+assets/_ogtmp.html

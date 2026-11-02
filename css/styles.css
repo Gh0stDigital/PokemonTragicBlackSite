@@ -1,0 +1,379 @@
+/* ==========================================================================
+   Pokémon Tragic Black — The Creepy Pasta Expansion
+   Main stylesheet
+   --------------------------------------------------------------------------
+   Sections:
+     1.  Theme tokens (:root + [data-theme] variants)
+     2.  Base / reset
+     3.  Layout shell
+     4.  Navigation
+     5.  Hero
+     6.  Section headings + content
+     7.  Components (facts, screenshots, notes, spoilers, download, faq)
+     8.  Comments
+     9.  Footer
+     10. Utilities
+     11. Accessibility helpers
+     12. Responsive
+     13. Reduced motion
+   ========================================================================== */
+
+/* 1. Theme tokens --------------------------------------------------------- */
+:root {
+  --bg: #0f1210;
+  --pane: #141914;
+  --header: #283027;
+  --line: #4b5847;
+  --text: #d9dfd1;
+  --muted: #9eaa98;
+  --accent: #c8d8bf;
+  --accent-strong: #d4dec9;
+  --link: #bed6b5;
+  --nav-hover-bg: #3a4838;
+  --scanline: #ffffff11;
+  --radius: 0;
+  --maxw: 850px;
+}
+
+/* Amber terminal */
+[data-theme="amber"] {
+  --bg: #120f08;
+  --pane: #16120a;
+  --header: #2f2614;
+  --line: #5a4a22;
+  --text: #ead9b0;
+  --muted: #b39a63;
+  --accent: #e8c77a;
+  --accent-strong: #f0d58a;
+  --link: #e4c47a;
+  --nav-hover-bg: #4a3c1c;
+  --scanline: #ffcc8814;
+}
+
+/* Crimson / blood */
+[data-theme="crimson"] {
+  --bg: #120a0a;
+  --pane: #160c0c;
+  --header: #2e1616;
+  --line: #5a2a2a;
+  --text: #e6cccc;
+  --muted: #b38a8a;
+  --accent: #d89a9a;
+  --accent-strong: #e4a8a8;
+  --link: #e0a0a0;
+  --nav-hover-bg: #4a1f1f;
+  --scanline: #ff888814;
+}
+
+/* 2. Base / reset --------------------------------------------------------- */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.65 Verdana, Geneva, sans-serif;
+  background-image: linear-gradient(90deg, transparent 49.8%, var(--scanline) 50%, transparent 50.2%);
+  background-size: 6px 6px;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+}
+
+a { color: var(--link); text-underline-offset: 3px; }
+
+button { font: inherit; cursor: pointer; }
+
+img, svg { max-width: 100%; }
+
+/* 3. Layout shell --------------------------------------------------------- */
+.shell {
+  width: min(var(--maxw), calc(100% - 26px));
+  margin: 36px auto 70px;
+  border: 1px solid var(--line);
+  background: var(--pane);
+  box-shadow: 0 12px 40px #0007;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 16px;
+  background: var(--header);
+  border-bottom: 1px solid var(--line);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+/* 4. Navigation ----------------------------------------------------------- */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.nav a {
+  color: var(--accent);
+  text-decoration: none;
+  padding: 5px 11px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.nav a:hover,
+.nav a:focus-visible,
+.nav a.active {
+  background: var(--nav-hover-bg);
+  color: #fff;
+}
+
+.nav .spacer { flex: 1 1 100%; height: 0; }
+
+/* Theme toggle button */
+.theme-toggle {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--line);
+  padding: 5px 11px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible { background: var(--nav-hover-bg); color: #fff; }
+
+.theme-toggle .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 6px var(--accent);
+}
+
+/* 5. Hero ----------------------------------------------------------------- */
+.hero {
+  text-align: center;
+  padding: 65px 20px 55px;
+  background: radial-gradient(ellipse at center, var(--header) 0%, transparent 65%);
+}
+
+.eyebrow { font-size: 11px; letter-spacing: 3px; color: var(--muted); }
+
+.ghost {
+  width: 104px;
+  margin: 24px auto 15px;
+  display: block;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 15px #becab42b);
+  animation: float 3.5s ease-in-out infinite;
+}
+
+@keyframes float { 50% { transform: translateY(-6px); } }
+
+h1 {
+  font: bold clamp(30px, 6vw, 51px)/1.08 Georgia, serif;
+  letter-spacing: 3px;
+  margin: 4px 0 12px;
+  color: var(--text);
+  text-shadow: 2px 2px #51604c;
+  overflow-wrap: break-word;
+}
+
+h1 span {
+  display: block;
+  font: 12px Verdana, sans-serif;
+  letter-spacing: 5px;
+  color: var(--muted);
+  margin-top: 15px;
+}
+
+.hero p { margin: 26px auto 24px; max-width: 440px; color: var(--text); }
+
+.cta {
+  display: inline-block;
+  background: var(--accent-strong);
+  color: #182016;
+  text-decoration: none;
+  border: 1px solid #eff5ea;
+  padding: 10px 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+.cta:hover,
+.cta:focus-visible { background: #fff; }
+
+.small { font-size: 11px; color: var(--muted); margin-top: 11px; }
+
+/* 6. Section headings + content ------------------------------------------ */
+.section-heading {
+  background: var(--header);
+  color: var(--accent);
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 12px;
+  padding: 9px 16px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: 10px;
+}
+
+.content { padding: 21px 23px 25px; }
+
+.twocol { display: grid; grid-template-columns: 1.7fr 1fr; gap: 28px; }
+
+/* 7. Components ----------------------------------------------------------- */
+.fact { font-size: 12px; color: var(--muted); border-bottom: 1px dotted var(--line); padding: 6px 0; }
+.fact strong { color: var(--text); }
+
+.shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+
+.shot {
+  background: #aab9a0;
+  aspect-ratio: 1.15;
+  border: 5px solid #4d584a;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  position: relative;
+  color: #30402e;
+  text-align: center;
+}
+
+.shot svg { width: 100%; height: 100%; image-rendering: pixelated; }
+
+.shot-label { font-size: 11px; text-align: center; color: var(--muted); margin-top: 4px; }
+
+.archive { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.note { background: var(--pane); border: 1px solid var(--line); padding: 13px; }
+.note h3 { font-size: 12px; margin: 0 0 4px; color: var(--accent); letter-spacing: 1px; }
+.note p { font-size: 12px; color: var(--muted); margin: 0; }
+
+.spoiler { margin: 11px 0; border: 1px solid var(--line); }
+.spoiler summary { cursor: pointer; padding: 10px 12px; background: var(--header); color: var(--accent); }
+.spoiler summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.spoiler p { padding: 0 13px 12px; font-size: 12px; color: var(--muted); }
+
+.warning {
+  border-left: 3px solid var(--accent);
+  padding: 8px 13px;
+  background: var(--header);
+  font-size: 12px;
+}
+
+.download-state {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  border: 1px solid var(--line);
+  padding: 16px;
+  background: var(--pane);
+}
+
+.disabled {
+  opacity: .55;
+  cursor: not-allowed;
+  border: 1px solid var(--muted);
+  padding: 9px 15px;
+  color: #182016;
+  background: var(--accent);
+  font-weight: bold;
+}
+
+.micro { font-size: 11px; color: var(--muted); }
+
+.sep { border: 0; border-top: 1px dotted var(--line); margin: 18px 0; }
+
+/* FAQ accordion (reuses .spoiler visuals via .faq-item) */
+.faq-item { margin: 9px 0; border: 1px solid var(--line); }
+.faq-item summary { cursor: pointer; padding: 11px 13px; background: var(--header); color: var(--accent); font-weight: bold; font-size: 12px; letter-spacing: .5px; }
+.faq-item summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.faq-item .faq-body { padding: 0 13px 13px; font-size: 12px; color: var(--muted); }
+.faq-item[open] summary { border-bottom: 1px solid var(--line); }
+
+/* Guide page specifics */
+.guide-step { border: 1px solid var(--line); padding: 14px 16px; margin: 0 0 14px; background: var(--pane); }
+.guide-step h3 { margin: 0 0 6px; font-size: 13px; color: var(--accent); letter-spacing: 1px; }
+.guide-step p { margin: 0 0 8px; font-size: 13px; color: var(--text); }
+.badge { display: inline-block; font-size: 10px; letter-spacing: 1px; padding: 2px 7px; border: 1px solid var(--line); color: var(--muted); margin-left: 6px; }
+
+/* 8. Comments ------------------------------------------------------------- */
+.comments { padding: 21px 23px 28px; }
+.comments .giscus { margin-top: 8px; }
+.comments-fallback { font-size: 12px; color: var(--muted); border: 1px dashed var(--line); padding: 13px; }
+
+/* 9. Footer --------------------------------------------------------------- */
+.footer {
+  text-align: center;
+  padding: 22px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+/* 10. Utilities ----------------------------------------------------------- */
+.muted { color: var(--muted); }
+.center { text-align: center; }
+
+/* 11. Accessibility helpers ---------------------------------------------- */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--accent-strong);
+  color: #182016;
+  padding: 8px 14px;
+  z-index: 100;
+  font-weight: bold;
+}
+.skip-link:focus {
+  left: 8px;
+  top: 8px;
+}
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* 12. Responsive ---------------------------------------------------------- */
+@media (max-width: 620px) {
+  .shell { margin: 10px auto 35px; }
+  .hero { padding: 44px 12px 37px; }
+  h1 { letter-spacing: 1px; }
+  h1 span { letter-spacing: 3px; }
+  .twocol,
+  .archive { grid-template-columns: 1fr; }
+  .shots { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .shot { border-width: 3px; }
+  .content,
+  .comments { padding: 18px 15px; }
+  .nav { gap: 3px; padding: 10px 8px; }
+  .nav a { font-size: 11px; padding: 5px 7px; }
+  .section-heading { letter-spacing: 1px; font-size: 11px; }
+  .top { font-size: 10px; padding: 8px 12px; }
+  .download-state { flex-direction: column; align-items: stretch; text-align: center; }
+}
+
+@media (max-width: 380px) {
+  .shots { grid-template-columns: 1fr; }
+}
+
+/* 13. Reduced motion ------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .ghost { animation: none; }
+  * { transition: none !important; }
+}
