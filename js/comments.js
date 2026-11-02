@@ -8,28 +8,7 @@
   "use strict";
 
   var PLACEHOLDER = "REPLACE_WITH_CATEGORY_ID";
-
-  // Map the site's retro themes onto a giscus theme.
-  function giscusThemeFor(siteTheme) {
-    switch (siteTheme) {
-      case "amber": return "cobalt";        // warm, high-contrast
-      case "crimson": return "dark_high_contrast";
-      default: return "transparent_dark";   // green / default
-    }
-  }
-
-  function currentSiteTheme() {
-    return document.documentElement.getAttribute("data-theme") || "green";
-  }
-
-  function postThemeToGiscus(theme) {
-    var frame = document.querySelector("iframe.giscus-frame");
-    if (!frame || !frame.contentWindow) return;
-    frame.contentWindow.postMessage(
-      { giscus: { setConfig: { theme: giscusThemeFor(theme) } } },
-      "https://giscus.app"
-    );
-  }
+  var GISCUS_THEME = "transparent_dark";
 
   function loadGiscus(container) {
     var categoryId = container.getAttribute("data-category-id");
@@ -51,17 +30,9 @@
     s.setAttribute("data-reactions-enabled", "1");
     s.setAttribute("data-emit-metadata", "0");
     s.setAttribute("data-input-position", "top");
-    s.setAttribute("data-theme", giscusThemeFor(currentSiteTheme()));
+    s.setAttribute("data-theme", GISCUS_THEME);
     s.setAttribute("data-lang", "en");
     container.appendChild(s);
-
-    // Keep giscus theme in sync when the visitor cycles the site theme.
-    new MutationObserver(function () {
-      postThemeToGiscus(currentSiteTheme());
-    }).observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["data-theme"]
-    });
   }
 
   function renderFallback(container) {

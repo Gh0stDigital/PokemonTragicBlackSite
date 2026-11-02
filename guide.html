@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="green">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,16 +23,6 @@
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/styles.css">
-
-  <!-- Apply saved theme before paint to avoid a flash of the wrong theme. -->
-  <script>
-    (function () {
-      try {
-        var t = localStorage.getItem("ptb-theme");
-        if (t) document.documentElement.setAttribute("data-theme", t);
-      } catch (e) {}
-    })();
-  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -52,9 +42,6 @@
       <a href="index.html#faq">FAQ</a>
       <a href="index.html#field-notes">FIELD NOTES</a>
       <a href="index.html#comments">COMMENTS</a>
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Change theme">
-        <span class="dot" aria-hidden="true"></span><span class="label">PHOSPHOR</span>
-      </button>
     </nav>
 
     <div id="main">
@@ -131,7 +118,6 @@
     </footer>
   </main>
 
-  <script src="js/theme.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

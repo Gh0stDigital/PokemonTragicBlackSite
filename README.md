@@ -15,14 +15,13 @@ expands the classic "Creepy Black" creepypasta into a full mystery/horror story.
 ├── css/
 │   └── styles.css      # All styles, organized by section, with theme tokens
 ├── js/
-│   ├── theme.js        # Retro theme toggle (green → amber → crimson), persisted
 │   ├── main.js         # Nav active-state + scroll spy
 │   └── comments.js     # giscus (GitHub Discussions) comment loader
 ├── assets/
 │   ├── favicon.svg     # Pixel-ghost favicon
 │   ├── og-image.png    # 1200×630 social-share image (rendered from the SVG)
 │   ├── og-image.svg    # Editable source for the OG image
-│   └── img/            # Place real screenshots here
+│   └── img/            # Ghost hero art + real screenshots
 ├── .nojekyll           # Tell GitHub Pages to serve files as-is (no Jekyll)
 └── README.md
 ```
@@ -72,12 +71,14 @@ you complete this one-time setup:
    - Replace `data-category-id="REPLACE_WITH_CATEGORY_ID"` with your real value,
      and update `data-category` if you picked a different category name.
 
-The widget automatically re-themes to match the site's active retro theme.
+The widget uses a dark theme to match the site.
 
 ## Customizing
 
-- **Themes:** edit the `:root`, `[data-theme="amber"]`, and `[data-theme="crimson"]`
-  blocks at the top of `css/styles.css`. The toggle button cycles through them.
+- **Colors:** edit the `:root` theme tokens at the top of `css/styles.css` to
+  recolor the whole site from one place.
+- **Hero ghost:** replace `assets/img/ghost.png` (a transparent PNG shown at the
+  top of the home page).
 - **Screenshots:** replace the inline placeholder SVGs in the Screenshots section
   of `index.html` with real captures (drop images in `assets/img/`).
 - **Social image:** edit `assets/og-image.svg`, then re-render `assets/og-image.png`

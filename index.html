@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="green">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,16 +23,6 @@
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/styles.css">
-
-  <!-- Apply saved theme before paint to avoid a flash of the wrong theme. -->
-  <script>
-    (function () {
-      try {
-        var t = localStorage.getItem("ptb-theme");
-        if (t) document.documentElement.setAttribute("data-theme", t);
-      } catch (e) {}
-    })();
-  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -52,19 +42,12 @@
       <a href="#faq">FAQ</a>
       <a href="#field-notes">FIELD NOTES</a>
       <a href="#comments">COMMENTS</a>
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Change theme">
-        <span class="dot" aria-hidden="true"></span><span class="label">PHOSPHOR</span>
-      </button>
     </nav>
 
     <div id="main">
       <header class="hero">
         <div class="eyebrow">A GAME BOY MYSTERY</div>
-        <svg class="ghost" viewBox="0 0 16 16" role="img" aria-label="Mysterious pixel ghost">
-          <path fill="#bdcab7" d="M5 1h6v1h2v2h1v8h-2v-1h-2v2H8v-1H6v2H3v-2H2V5h1V3h2z"/>
-          <path fill="#172015" d="M5 6h2v3H5zm5 0h2v3h-2zM7 11h3v1H7z"/>
-          <path fill="#71846d" d="M3 5h1v6H3zm9-1h1v7h-1z"/>
-        </svg>
+        <img class="ghost" src="assets/img/ghost.png" width="104" height="106" alt="Mysterious pixel ghost" decoding="async">
         <h1>POKéMON TRAGIC BLACK<span>THE CREEPY PASTA EXPANSION</span></h1>
         <p>If a Pokémon kills a person while obeying its Trainer…<br><strong>Who is responsible?</strong></p>
         <a class="cta" href="#download">↓ DOWNLOAD PATCH</a>
@@ -234,7 +217,6 @@
     </footer>
   </main>
 
-  <script src="js/theme.js"></script>
   <script src="js/main.js"></script>
   <script src="js/comments.js"></script>
 </body>

@@ -3,7 +3,7 @@
    Main stylesheet
    --------------------------------------------------------------------------
    Sections:
-     1.  Theme tokens (:root + [data-theme] variants)
+     1.  Theme tokens (:root CSS variables)
      2.  Base / reset
      3.  Layout shell
      4.  Navigation
@@ -33,36 +33,6 @@
   --scanline: #ffffff11;
   --radius: 0;
   --maxw: 850px;
-}
-
-/* Amber terminal */
-[data-theme="amber"] {
-  --bg: #120f08;
-  --pane: #16120a;
-  --header: #2f2614;
-  --line: #5a4a22;
-  --text: #ead9b0;
-  --muted: #b39a63;
-  --accent: #e8c77a;
-  --accent-strong: #f0d58a;
-  --link: #e4c47a;
-  --nav-hover-bg: #4a3c1c;
-  --scanline: #ffcc8814;
-}
-
-/* Crimson / blood */
-[data-theme="crimson"] {
-  --bg: #120a0a;
-  --pane: #160c0c;
-  --header: #2e1616;
-  --line: #5a2a2a;
-  --text: #e6cccc;
-  --muted: #b38a8a;
-  --accent: #d89a9a;
-  --accent-strong: #e4a8a8;
-  --link: #e0a0a0;
-  --nav-hover-bg: #4a1f1f;
-  --scanline: #ff888814;
 }
 
 /* 2. Base / reset --------------------------------------------------------- */
@@ -136,30 +106,6 @@ img, svg { max-width: 100%; }
 
 .nav .spacer { flex: 1 1 100%; height: 0; }
 
-/* Theme toggle button */
-.theme-toggle {
-  background: transparent;
-  color: var(--accent);
-  border: 1px solid var(--line);
-  padding: 5px 11px;
-  font-size: 12px;
-  letter-spacing: 1px;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.theme-toggle:hover,
-.theme-toggle:focus-visible { background: var(--nav-hover-bg); color: #fff; }
-
-.theme-toggle .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 6px var(--accent);
-}
-
 /* 5. Hero ----------------------------------------------------------------- */
 .hero {
   text-align: center;
@@ -171,6 +117,7 @@ img, svg { max-width: 100%; }
 
 .ghost {
   width: 104px;
+  height: auto;
   margin: 24px auto 15px;
   display: block;
   image-rendering: pixelated;
