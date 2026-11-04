@@ -391,13 +391,13 @@ h1 .word-black {
     letter-spacing: 3px;
   }
   .guide-title-row {
-    grid-template-columns: 56px minmax(0, 1fr) 56px;
-    column-gap: 6px;
-    align-items: start;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    column-gap: 8px;
+    align-items: center;
     margin-top: 0;
   }
   .guide-title-row h1 { margin: 2px 0 10px; line-height: 1.05; }
-  .guide-deco { width: 56px; margin-top: 6px; }
+  .guide-deco { width: clamp(62px, 16vw, 78px); margin-top: 0; }
   .guide-deco-left { justify-self: end; }
   .guide-deco-right { justify-self: start; }
   .hero-media {
@@ -425,10 +425,10 @@ h1 .word-black {
 
 @media (max-width: 380px) {
   .guide-title-row {
-    grid-template-columns: 44px minmax(0, 1fr) 44px;
-    column-gap: 4px;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    column-gap: 6px;
   }
-  .guide-deco { width: 44px; margin-top: 8px; }
+  .guide-deco { width: clamp(52px, 18vw, 64px); margin-top: 0; }
   .hero-mini-shot { display: none; }
   .hero-strip { width: auto; }
   .hero-media {
