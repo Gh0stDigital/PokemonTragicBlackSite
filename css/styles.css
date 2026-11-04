@@ -121,7 +121,7 @@ img, svg { max-width: 100%; }
   margin: 0;
   position: absolute;
   left: 50%;
-  top: 12px;
+  top: 24px;
   transform: translateX(-50%);
   white-space: nowrap;
   text-shadow: 1px 1px #51604c;
@@ -353,7 +353,7 @@ h1 .word-black {
 }
 .skip-link:focus {
   left: 8px;
-  top: 10px;
+  top: 18px;
 }
 
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
