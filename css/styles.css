@@ -320,6 +320,7 @@ h1 .word-black {
 .guide-step h3 { margin: 0 0 6px; font-size: 13px; color: var(--accent); letter-spacing: 1px; }
 .guide-step p { margin: 0 0 8px; font-size: 13px; color: var(--text); }
 .badge { display: inline-block; font-size: 10px; letter-spacing: 1px; padding: 2px 7px; border: 1px solid var(--line); color: var(--muted); margin-left: 6px; }
+.chapter-policy { margin: -6px 0 12px; }
 
 /* 8. Comments ------------------------------------------------------------- */
 .comments { padding: 21px 23px 28px; }
