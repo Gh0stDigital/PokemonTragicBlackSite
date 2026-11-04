@@ -108,6 +108,7 @@ img, svg { max-width: 100%; }
 
 /* 5. Hero ----------------------------------------------------------------- */
 .hero {
+  position: relative;
   text-align: center;
   padding: 65px 20px 55px;
   background: radial-gradient(ellipse at center, var(--header) 0%, transparent 65%);
@@ -117,16 +118,20 @@ img, svg { max-width: 100%; }
   font: 10px Verdana, sans-serif;
   letter-spacing: 5px;
   color: var(--muted);
-  margin: 0 0 8px;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
+  white-space: nowrap;
   text-shadow: 1px 1px #51604c;
-  transform: translateY(-120%);
 }
 
 .hero-media {
   --shot-gap: 108px;
   --shot-up: 28px;
   width: min(720px, 100%);
-  margin: 24px auto 12px;
+  margin: 40px auto 12px;
   position: relative;
   min-height: 182px;
 }
@@ -357,11 +362,14 @@ h1 .word-black {
 @media (max-width: 620px) {
   .shell { margin: 10px auto 35px; }
   .hero { padding: 44px 12px 37px; }
-  .eyebrow { letter-spacing: 3px; }
+  .eyebrow {
+    top: 8px;
+    letter-spacing: 3px;
+  }
   .hero-media {
     --shot-gap: 71px;
     --shot-up: 16px;
-    margin-top: 16px;
+    margin-top: 30px;
     min-height: 136px;
   }
   .hero-mini-shot { width: 106px; border-width: 2px; }
@@ -387,6 +395,7 @@ h1 .word-black {
   .hero-media {
     --shot-gap: 53px;
     --shot-up: 12px;
+    margin-top: 28px;
     min-height: 116px;
   }
   .hero-mini-shot { width: 90px; }
