@@ -211,16 +211,20 @@ h1 .word-black {
 .guide-title-row {
   width: min(720px, 100%);
   margin: 4px auto 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: center;
-  gap: 16px;
+  justify-items: center;
+  column-gap: 12px;
 }
 
-.guide-title-row h1 { margin: 4px 0 12px; }
+.guide-title-row h1 {
+  margin: 4px 0 12px;
+  min-width: 0;
+}
 
 .guide-deco {
-  width: 86px;
+  width: 60px;
   height: auto;
   image-rendering: pixelated;
   filter: drop-shadow(0 0 10px #becab42b);
@@ -386,8 +390,8 @@ h1 .word-black {
     top: 8px;
     letter-spacing: 3px;
   }
-  .guide-title-row { gap: 10px; margin-top: 0; }
-  .guide-deco { width: 64px; }
+  .guide-title-row { column-gap: 8px; margin-top: 0; }
+  .guide-deco { width: 48px; }
   .hero-media {
     --shot-gap: 71px;
     --shot-up: 16px;
@@ -412,7 +416,7 @@ h1 .word-black {
 }
 
 @media (max-width: 380px) {
-  .guide-deco { width: 52px; }
+  .guide-deco { width: 40px; }
   .hero-mini-shot { display: none; }
   .hero-strip { width: auto; }
   .hero-media {
